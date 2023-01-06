@@ -1,0 +1,25 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+\usepackage[margin=1in]{geometry}
+
+\newcounter{exercise}[section]
+\newenvironment{exercise}[1]{\refstepcounter{exercise}\par\medskip
+\noindent \textbf{Exercise~\theexercise.} \rmfamily #1
+\par\medskip\noindent \textbf{Solution.} \rmfamily}{}
+\newcommand{\alternativeSolution}{\par\medskip\noindent \textbf{Solution (alternative).} \rmfamily}
+
+
+\title{Software Verification Exercises - Part 2}
+\author{Stevanato Giacomo}
+\date{06/01/2023}
+
+\begin{document}
+    \maketitle
+
+\end{document}
