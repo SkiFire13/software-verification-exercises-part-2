@@ -1,0 +1,70 @@
+\begin{exercise}{
+    Let $C$ and $A$ be complete lattices, $(\alpha, C, A, \gamma)$ be a Galois insertion, $f: C \to C$ be a monotone concrete operation and $f^\sharp: A \to A$ be a monotone abstract operation. Assume $f \circ \gamma = \gamma \circ f^\sharp$ holds (in this case, $f^\sharp$ is called a $\gamma$-complete approximation of $f$).
+    \begin{enumerate}[1.]
+        \item Prove that $\alpha(\gfp(f)) = \gfp(f^\sharp)$
+        \item Give a counterexample to the equality $\alpha(\lfp(f)) = \lfp(f^\sharp)$
+    \end{enumerate}
+}
+    \begin{enumerate}[1.]
+        \item We prove the two directions:
+        \begin{itemize}
+            \item $(\geq)$
+            \begin{gather*}
+                \gamma(\gfp(f^\sharp)) = \gamma(f^\sharp (\gfp(f^\sharp))) = f(\gamma(\gfp(f^\sharp))) \\
+                \implies \gamma(\gfp(f^\sharp)) \leq \gfp(f) \\
+                \gfp(f^\sharp) = \alpha(\gamma(\gfp(f^\sharp))) \leq \alpha(\gfp(f))
+            \end{gather*}
+            \item $(\leq)$
+            \begin{gather*}
+                \begin{aligned}
+                    \alpha(\gfp(f)) &= \alpha(f(\gfp(f))) \\
+                    &\leq \alpha(f(\gamma(\alpha(\gfp(f))))) \\
+                    &= \alpha(\gamma(f^\sharp(\alpha(\gfp(f))))) \\
+                    &= f^\sharp(\alpha(\gfp(f)))
+                \end{aligned} \\
+                \implies \alpha(\gfp(f)) \leq \gfp(f^\sharp)
+            \end{gather*}
+            (Fixpoint induction lemma for greatest fixpoint, without requirement of $f$ being continuous but only monotone)
+        \end{itemize}
+        \item Consider for example $C = \{0, 1, 2\}$, $A = \{x, y\}$ with a linear order. They are clearly lattices. $\alpha$ and $\gamma$ as defined as the following:
+        \begin{gather*}
+            \begin{aligned}
+                \alpha(0) = x \\
+                \alpha(1) = x \\
+                \alpha(2) = y
+            \end{aligned}
+            \qquad\qquad
+            \begin{aligned}
+                \gamma(x) = 1 \\
+                \gamma(y) = 2
+            \end{aligned}
+        \end{gather*}
+        This is a Galois insertion, in fact:
+        \begin{gather*}
+            \begin{aligned}
+                0 \leq \gamma(\alpha(0)) = \alpha(x) = 1 \\
+                1 \leq \gamma(\alpha(1)) = \alpha(x) = 1 \\
+                2 \leq \gamma(\alpha(2)) = \alpha(y) = 2
+            \end{aligned}
+            \qquad\qquad
+            \begin{aligned}
+                \alpha(\gamma(x)) = \alpha(1) = x \\
+                \alpha(\gamma(y)) = \alpha(2) = y
+            \end{aligned}
+        \end{gather*}
+        Consider the following $f$ and the induced $f^\sharp = \alpha \circ f \circ \gamma$ so that $\gamma \circ f^\sharp = f \circ \gamma$ by construction:
+        \begin{gather*}
+            \begin{aligned}
+                f(0) = 0 \\
+                f(1) = 2 \\
+                f(2) = 2
+            \end{aligned}
+            \qquad\qquad
+            \begin{aligned}
+                f^\sharp (x) = \alpha(f(\gamma(x))) = \alpha(f(1)) = \alpha(2) = y \\
+                f^\sharp (y) = \alpha(f(\gamma(y))) = \alpha(f(2)) = \alpha(2) = y
+            \end{aligned}
+        \end{gather*}
+        $0$ and $2$ are fixpoints of $f$, thus $\lfp(f) = 0$. $y$ is the only fixpoint of $f^\sharp$, so $\lfp(f^\sharp) = y$. However $\alpha(\lfp(f)) = \alpha(0) = x \neq y = \lfp(f^\sharp)$.
+    \end{enumerate}
+\end{exercise}
