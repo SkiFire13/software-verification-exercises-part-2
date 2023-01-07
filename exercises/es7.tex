@@ -1,0 +1,40 @@
+\begin{exercise}{
+    Let $S$ be any set, $\left<L, \leq\right>$ be a complete lattice and consider $L^S \triangleq S \to L$ endowed with the following pointwise order relation $\dotleq$ between functions: $f_1 \dotleq f_2$ when for all $x \in S$, $f_1(x) \leq f_2(x)$. \\
+    Let $(\alpha, \left<C, \leq_C\right>, \left<A, \leq_A\right>, \gamma)$ be a Galois connection. Prove that $(\dotalpha, C^S, A^S, \dotgamma)$ is a Galois connection, where:
+    \begin{itemize}
+        \item $\dotalpha(f) \triangleq \lambda x.\ \alpha(f(x))$
+        \item $\dotgamma(g) \triangleq \lambda x.\ \gamma(g(x))$
+    \end{itemize}
+}
+    \begin{enumerate}[1.]
+        \item $C^S$ and $A^S$ are posets by hypothesis.
+        \item $\dotalpha$ is monotonic ($\forall f_1, f_2 \in C^S.\ f_1 \dotleq f_2 \implies \dotalpha(f_1) \dotleq \dotalpha(f_2))$
+        \begin{gather*}
+            f_1 \dotleq f_2 \implies \forall x \in S.\ f_1(x) \leq_C f_2(x) \\
+            \implies \alpha(f_1(x)) \leq_A \alpha(f_2(x)) \\
+            \implies \dotalpha(f_1)(x) \leq_A \dotalpha(f_2)(x) \\
+            \implies \dotalpha(f_1) \dotleq \dotalpha(f_2)
+        \end{gather*}
+        \item $\dotgamma$ is monotonic ($\forall g_1, g_2 \in A^S.\ g_1 \dotleq g_2 \implies \dotgamma(g_1) \dotleq \dotgamma(g_2))$
+        \begin{gather*}
+            g_1 \dotleq g_2 \implies \forall x \in S.\ g_1(x) \leq_A g_2(x) \\
+            \implies \gamma(g_1(x)) \leq_C \gamma(g_2(x)) \\
+            \implies \dotgamma(g_1)(a) \leq_C \dotgamma(g_2)(a) \\
+            \implies \dotgamma(g_1) \dotleq \dotgamma(g_2)
+        \end{gather*}
+        \item $\forall f \in C^S.\ f \dotleq \dotgamma(\dotalpha(f))$
+        \begin{gather*}
+            c \leq_C \gamma(\alpha(c)) \quad \forall c \in C \\
+            \implies f(x) \leq_C \gamma(\alpha(f(x))) \quad \forall x \in S \\
+            \implies f(x) \leq_C \dotgamma(\dotalpha(f))(x) \\
+            \implies f \dotleq \dotgamma(\dotalpha(f))
+        \end{gather*}
+        \item $\forall g \in A^S.\ \dotalpha(\dotgamma(g)) \dotleq g$
+        \begin{gather*}
+            \alpha(\gamma(a)) \leq_A a \quad \forall a \in A \\
+            \implies \alpha(\gamma(g(x))) \leq_A g(x) \quad \forall x \in S \\
+            \implies \dotalpha(\dotgamma(g))(x) \dotleq g(x) \\
+            \implies \dotalpha(\dotgamma(g)) \dotleq g
+        \end{gather*}
+    \end{enumerate}
+\end{exercise}
