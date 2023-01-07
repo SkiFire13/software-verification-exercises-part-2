@@ -1,0 +1,21 @@
+\begin{exercise}{
+    Let $(\alpha, \left<\wp(State), \subseteq\right>, \left<A, \leq\right>, \gamma)$ be a Galois insertion such that $\left<A, \leq\right>$ is a complete lattice and $\gamma(\bot_A) = \varnothing$. Let us consider a Boolean state predicate $b \in \wp(State)$ and its negation $\neg b \defeq State \setminus b$. Assume that the following conditions hold:
+    \begin{enumerate}[(i)]
+        \item for all $X \in \wp(State), \alpha(X \cap b) = \alpha(\gamma(\alpha(X)) \cap b)$
+        \item for all $X \in \wp(State), \alpha(X \cap \neg b) = \alpha(\gamma(\alpha(X)) \cap \neg b)$
+    \end{enumerate}
+    Prove that $\gamma(\alpha(b)) = b$ and $\gamma(\alpha(\neg b)) = \neg b$ hold.
+}
+    \begin{gather*}
+        \alpha(b \cap \neg b) = \alpha(\gamma(\alpha(b)) \cap \neg b) \\
+        \alpha(b \cap \neg b) = \alpha(\varnothing) \\
+        \gamma(\bot_A) = \varnothing \implies \alpha(\varnothing) \leq \bot_A \implies \alpha(\varnothing) = \bot_A \\
+        \alpha(\gamma(\alpha(b)) \cap \neg b) = \bot_A \\
+        \implies \gamma(\alpha(b)) \cap \neg b \subseteq \gamma(\bot_A) = \varnothing \\
+        \implies \gamma(\alpha(b)) \cap \neg b = \gamma(\alpha(b)) \setminus b = \varnothing \\
+        \implies \gamma(\alpha(b)) \subseteq b \\
+        \implies \gamma(\alpha(b)) = b
+    \end{gather*}
+    Since $b = \neg \neg b$ by the same argument $\gamma(\alpha(\neg b)) = \neg b$. \\
+    The proof didn't use the fact that we were given a Galois insertion.
+\end{exercise}
