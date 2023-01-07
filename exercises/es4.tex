@@ -1,0 +1,26 @@
+\begin{exercise}{
+    Let $C$ and $A$ be complete lattices, $(\alpha, C, A, \gamma)$ be a Galois insertion, $f: C \to C$ be a monotone function. Prove that $\gamma(\lfp(\alpha \circ f \circ \gamma)) = \lfp(\gamma \circ \alpha \circ f)$
+}
+    We prove the two directions:
+    \begin{itemize}
+        \item $\leq$
+        \begin{gather*}
+            \begin{aligned}
+                (\alpha \circ f)(\lfp(\gamma \circ \alpha \circ f))
+                &= (\alpha \circ f \circ \gamma \circ \alpha \circ f)(\lfp(\gamma \circ \alpha \circ f)) \\
+                &= (\alpha \circ f \circ \gamma)((\alpha \circ f)(\lfp(\gamma \circ \alpha \circ f)))
+            \end{aligned} \\
+            \implies \lfp(\alpha \circ f \circ \gamma) \leq (\alpha \circ f)(\lfp(\gamma \circ \alpha \circ f)) \\
+            \implies \gamma(\lfp(\alpha \circ f \circ \gamma)) \leq (\gamma \circ \alpha \circ f)(\lfp(\gamma \circ \alpha \circ f)) = \lfp(\gamma \circ \alpha \circ f)
+        \end{gather*}
+        \item $\geq$
+        \begin{gather*}
+            \begin{aligned}
+                \gamma(\lfp(\alpha \circ f \circ \gamma))
+                &= (\gamma \circ \alpha \circ f \circ \gamma) (\lfp(\alpha \circ f \circ \gamma)) \\
+                &= (\gamma \circ \alpha \circ f)(\gamma(\lfp(\alpha \circ f \circ \gamma)))
+            \end{aligned} \\
+            \implies \lfp(\gamma \circ \alpha \circ f) \leq \gamma(\lfp(\alpha \circ f \circ \gamma))
+        \end{gather*}
+    \end{itemize}
+\end{exercise}
