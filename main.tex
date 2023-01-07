@@ -7,6 +7,7 @@
 \usepackage{amssymb}
 \usepackage{stmaryrd}
 \usepackage[margin=1in]{geometry}
+\usepackage[shortlabels]{enumitem}
 
 \newcounter{exercise}[section]
 \newenvironment{exercise}[1]{\refstepcounter{exercise}\par\medskip
@@ -14,6 +15,7 @@
 \par\medskip\noindent \textbf{Solution.} \rmfamily}{}
 \newcommand{\alternativeSolution}{\par\medskip\noindent \textbf{Solution (alternative).} \rmfamily}
 
+\newcommand{\id}{\operatorname{id}}
 
 \title{Software Verification Exercises - Part 2}
 \author{Stevanato Giacomo}
@@ -22,4 +24,5 @@
 \begin{document}
     \maketitle
 
+    \input{exercises/es1.tex}\clearpage
 \end{document}
