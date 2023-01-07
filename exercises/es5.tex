@@ -6,7 +6,34 @@
         \item $\post_R \defeq \lambda X. \left\{ y \in S \mid \exists x \in X.\ (x, y) \in R \right\}$
         \item $\widetilde{\post}_R \defeq \lambda X. \left\{ y \in S \mid \forall x \in S.\ ((x, y) \in R \implies x \in X)\right\}$
     \end{itemize}
-    Prove that $(\pre_R, \left<\wp(S), \subseteq\right>, \left<\wp(S), \subseteq\right>, \widetilde{\post}_R)$ and $(\post_R, \left<\wp(S), \subseteq\right>, \left<\wp(S), \subseteq\right>, \widetilde{\pre}_R)$ are both Galois connections.
+    Prove that $(\pre_R, \left<\wp(S), \subseteq\right>, \left<\wp(S), \subseteq\right>, \widetilde{\post}_R)$ and $(\post_R, \left<\wp(S), \subseteq\right>, \left<\wp(S), \subseteq\right>, \widetilde{\pre}_R)$ \\ are both Galois connections.
 }
-    TODO
+    We first prove that $(\pre_R, \left<\wp(S), \subseteq\right>, \left<\wp(S), \subseteq\right>, \widetilde{\post}_R)$ is a Galois connection:
+    \begin{enumerate}[1.]
+        \item $\left<\wp(S), \subseteq\right>$ is a complete lattice.
+        \item $pre_R$ is monotone ($\forall Y_1, Y_2 \in \wp(S).\ Y_1 \subseteq Y_2 \implies \pre_R(Y_1) \subseteq \pre_R(Y_2)$):
+        \begin{gather*}
+            x \in \pre_R(Y_1) \implies \exists y \in Y_1.\ (x, y) \in R \qquad\quad
+            y \in Y_1 \implies y \in Y_2 \\
+            \implies \exists y \in Y_2.\ (x, y) \in R \implies x \in \pre_R(Y_2)
+        \end{gather*}
+        \item $\widetilde{\post}_R$ is monotone ($\forall X_1, X_1 \in \wp(S).\ X_1 \subseteq X_2 \implies \widetilde{\post}_R(X_1) \subseteq \widetilde{\post}_R(X_2)$):
+        \begin{gather*}
+            y \in \widetilde{\post}_R(X_1) \implies \forall x \in S.\ (x, y) \in R \implies x \in X_1 \qquad\quad
+            x \in X_1 \implies x \in X_2 \\
+            \implies \forall x \in S.\ (x, y) \in R \implies x \in X_2 \implies x \in \widetilde{\post}_R(X_2)
+        \end{gather*}
+        \item $\forall Y \in \wp(S).\ Y \subseteq \widetilde{\post}_R(\pre_R(Y))$
+        \begin{gather*}
+            y \in Y \implies \forall x \in S.\ (x, y) \in R \implies \exists y' \in Y.\ (x, y') \in R \\
+            \implies \forall x \in S.\ (x, y) \in R \implies x \in \pre_R(Y) \\
+            \implies y \in \widetilde{\post}_R(\pre_R(Y))
+        \end{gather*}
+        \item $\forall X \in \wp(S).\ \pre_R(\widetilde{\post}_R(X)) \subseteq X$
+        \begin{gather*}
+            x \in \pre_R(\widetilde{\post}_R(X)) \implies \exists y \in \widetilde{\post}_R(X).\ (x, y) \in R \\
+            \implies \exists y \in S.\ (x, y) \in R, \forall x' \in S.\ (x', y) \in R \implies x' \in X \\
+            (x, y) \in R \implies x \in X
+        \end{gather*}
+    \end{enumerate}
 \end{exercise}
