@@ -1,0 +1,36 @@
+\begin{exercise}{
+    Let $(\alpha_1, C_1, A_1, \gamma_1)$ and $(\alpha_2, C_2, A_2, \gamma_2)$ be Galois connections where $C_i$ and $A_i$ ($i = 1,2$) are complete lattices. Let $\left<C_1 \to^m C_2, \sqsubseteq\right>$ and $\left<A_1 \to^m A_2, \sqsubseteq\right>$ denote the complete lattices of monotone functions ordered with the pointwise ordering: $f \sqsubseteq g$ iff $\forall x.\ f(x) \leq g(x)$. Define $\alpha : (C_1 \to^m C_2) \to (A_1 \to^m A_2)$ by $\alpha(f) \defeq \alpha_2 \circ f \circ \gamma_1$ and $\gamma: (A_1 \to^m A_2) \to (C_1 \to^m C_2)$ by $\gamma(f^\sharp) \defeq \gamma_2 \circ f^\sharp \circ \alpha_1$. \\
+    Prove that $(\alpha, C_1 \to^m C_2, A_1 \to^m A_2, \gamma)$ is a Galois connection.
+}
+    \begin{enumerate}[1.]
+        \item $\left<C_1 \to^m C_2, \sqsubseteq\right>$ and $\left<A_1 \to^m A_2, \sqsubseteq\right>$ are lattices by hypothesis.
+        \item $\alpha$ monotone ($\forall c \in C_1.\ \alpha(f_1)(c) \leq \alpha(f_2)(c)$):
+        \begin{gather*}
+            f_1 \sqsubseteq f_2 \implies \forall d \in C_1.\ f_1 (d) \leq f_2 (d) \\
+            \implies f_1 (\gamma_1 (c)) \leq f_2 (\gamma_1 (c)) \\
+            \implies \alpha_2 (f_1 (\gamma_1 (c))) \leq \alpha_2 (f_2 (\gamma_1 (c))) \\
+            \implies \alpha(f_1)(c) \leq \alpha(f_2)(c)
+        \end{gather*}
+        \item $\gamma$ monotone ($\forall a \in A_1.\ \alpha(f^\sharp_1)(a) \leq \alpha(f^\sharp_2)(a)$):
+        \begin{gather*}
+            f\sharp_1 \sqsubseteq f\sharp_2 \implies \forall b \in A_1.\ f\sharp_1 (b) \leq f\sharp_2 (b) \\
+            \implies f\sharp_1 (\alpha_1 (a)) \leq f\sharp_2 (\alpha_1 (a)) \\
+            \implies \gamma_2 (f\sharp_1 (\alpha_1 (a))) \leq \gamma_2 (f\sharp_2 (\alpha_1 (a))) \\
+            \implies \gamma(f\sharp_1)(a) \leq \gamma(f\sharp_2)(a)
+        \end{gather*}
+        \item $\forall f \in C_1 \to^m C_2.\ f \sqsubseteq \gamma(\alpha(f))$:
+        \begin{gather*}
+            c \leq \gamma_1 (\alpha_1 (c)) \qquad \forall c \in C_1 \\
+            \implies f(c) \leq f(\gamma_1 (\alpha_1 (c))) \\
+            \implies f(c) \leq \gamma_2(\alpha_2(f(c))) \leq \gamma_2(\alpha_2(f(\gamma_1 (\alpha_1 (c))))) \\
+            \implies f \sqsubseteq \gamma(\alpha(f))
+        \end{gather*}
+        \item $\forall f^\sharp \in A_1 \to^m A_2.\ \alpha(\gamma(f^\sharp)) \sqsubseteq f^\sharp$:
+        \begin{gather*}
+            \alpha_1(\gamma_1(c)) \leq c \qquad \forall c \in C_1 \\
+            \implies f^\sharp(\alpha_1(\gamma_1(c))) \leq f^\sharp(c) \\
+            \implies \alpha_2(\gamma_2(f^\sharp(\alpha_1(\gamma_1(c))))) \leq f^\sharp(\alpha_1(\gamma_1(c))) \leq f^\sharp(c) \\
+            \implies \alpha(\gamma(f^\sharp)) \sqsubseteq f^\sharp
+        \end{gather*}
+    \end{enumerate}
+\end{exercise}
