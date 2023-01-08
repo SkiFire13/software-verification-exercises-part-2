@@ -1,0 +1,10 @@
+\begin{exercise}{
+    Use the web \href{http://pop-art.inrialpes.fr/interproc/interprocweb.cgi}{Interproc static analyzer} with Linear Equalities (a.k.a. Karr domain) and Convex Polyhedra on programs that include at least a loop whose body includes at least two nontrivial assignments for different variables. For each abstract domain  $A \in \left\{\text{Linear Equalities}, \text{Convex Polyhedra}\right\}$, exhibit two programs $P_A$ and $Q_A$ such that:
+    \begin{itemize}
+        \item The abstract loop invariants in $A$ computed by Interproc for $P_A$ are the most precise, i.e., for each loop invariant program point $p$ of $P_A$, if $\Sinv{P_A}(p)$ is the concrete program invariant at the loop invariant program point $p$ then Interproc infers precisely $\alpha_A(\Sinv{P_A}(p))$. These abstract loop invariants must be relations which simultaneously involve at least three different numerical variables, e.g. $2x - y -3z \leq 1$ for convex polyhedra and $x + y - 3z = 2$ for linear equalities.
+        \item The abstract loop invariants in $A$ computed by Interproc for $Q_A$ are not the most precise, i.e. for each loop invariant program point $p$ of $Q_A$, if $\Sinv{Q_A}(p)$ is the concrete program invariant at the loop invariant program point $p$ then Interproc is able to infer a sound but not precise invariant $a_p \in A$ such that $\alpha_A(\Sinv{Q_A}(p)) <_A a_p$.
+    \end{itemize}
+    The student should be able to explain why and how Interproc computes the results of these program analyses.
+}
+    
+\end{exercise}

@@ -9,6 +9,12 @@
 \usepackage[margin=1in]{geometry}
 \usepackage[shortlabels]{enumitem}
 \usepackage{tikz}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue,
+}
 
 \newcounter{exercise}[section]
 \newenvironment{exercise}[1]{\refstepcounter{exercise}\par\medskip
@@ -28,6 +34,7 @@
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Bsharp}[1]{\mathcal{B}^\sharp \llbracket #1 \rrbracket}
 \newcommand{\Asharp}[1]{\mathcal{A}^\sharp \llbracket #1 \rrbracket}
+\newcommand{\Sinv}[1]{\mathcal{S} \llbracket #1 \rrbracket}
 
 \title{Software Verification Exercises - Part 2}
 \author{Stevanato Giacomo}
@@ -45,4 +52,5 @@
     \input{exercises/es7.tex}\clearpage
     \input{exercises/es8.tex}\clearpage
     \input{exercises/es9.tex}\clearpage
+    \input{exercises/es10.tex}\clearpage
 \end{document}
