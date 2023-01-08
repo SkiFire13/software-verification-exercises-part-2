@@ -12,7 +12,9 @@
                 &= (\gamma \circ f^\sharp \circ \alpha \circ \gamma \circ \alpha) (c^*) \\
                 &= (\gamma \circ f^\sharp \circ \alpha) (c^*) \\
                 &= (\gamma \circ \alpha \circ f) (c^*) \\
-                &= (\gamma \circ \alpha \circ \gamma) (a) \\
+                &= (\gamma \circ \alpha) (\vee_C \left\{f(c) \mid c \in C, f(c) \leq \gamma(a)\right\}) \\
+                % \gamma(a) is an upper bound of f(S) (not necessarily the least)
+                &\leq (\gamma \circ \alpha \circ \gamma) (a) \\
                 &= \gamma (a)
             \end{aligned} \\
             \implies (\gamma \circ \alpha) (c^*) \in S \\
@@ -40,10 +42,12 @@
                 \begin{aligned}
                     \alpha(f(c^*)) &= \alpha(f(\vee_C S)) \\
                     &= \alpha(\vee_C \left\{f(\dot{c}) \mid \dot{c} \in C, f(\dot{c}) \leq \gamma(\alpha(f(c)))\right\}) \\
-                    &= \alpha(\gamma(\alpha(f(c)))) = \alpha(f(c))
+                    % \gamma(\alpha(f(c))) is an upper bound of f(S) (not necessarily the least)
+                    &\leq \alpha(\gamma(\alpha(f(c)))) = \alpha(f(c))
                 \end{aligned} \\
-                \implies \alpha(f(c)) = \alpha(f(c^*)) \geq \alpha(f(\gamma(\alpha(c))))
+                \implies \alpha(f(c)) \geq \alpha(f(c^*)) \geq \alpha(f(\gamma(\alpha(c))))
             \end{gather*}
         \end{itemize}
     \end{itemize}
+    Note: this proof didn't use the properties of a Galois insertion, only $\alpha = \alpha \circ \gamma \circ \alpha$ and $\gamma = \gamma \circ \alpha \circ \gamma$, which are properties of Galois connections too (see exercise 1).
 \end{exercise}
