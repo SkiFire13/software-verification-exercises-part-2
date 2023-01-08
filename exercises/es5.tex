@@ -36,4 +36,22 @@
             (x, y) \in R \implies x \in X
         \end{gather*}
     \end{enumerate}
+    Now we prove that $(\post_R, \left<\wp(S), \subseteq\right>, \left<\wp(S), \subseteq\right>, \widetilde{\pre}_R)$ is a Galois connection. Consider the relation $Q = \left\{(y, x) \mid (x, y) \in R\right\}$. Then:
+    \begin{itemize}
+        \item $\!\begin{aligned}[t]
+            \post_R
+            &= \lambda X. \left\{ y \in S \mid \exists x \in X.\ (x, y) \in R \right\} \\
+            &= \lambda X. \left\{ y \in S \mid \exists x \in X.\ (y, x) \in Q \right\} \\
+            &= \lambda Y. \left\{ x \in S \mid \exists y \in Y.\ (x, y) \in Q \right\} \\
+            &= \pre_Q
+        \end{aligned}$
+        \item $\!\begin{aligned}[t]
+            \widetilde{\pre}_R
+            &= \lambda Y. \left\{ x \in S \mid \forall y \in S.\ ((x, y) \in R \implies y \in Y)\right\} \\
+            &= \lambda Y. \left\{ x \in S \mid \forall y \in S.\ ((y, x) \in Q \implies y \in Y)\right\} \\
+            &= \lambda X. \left\{ y \in S \mid \forall x \in S.\ ((x, y) \in Q \implies x \in X)\right\} \\
+            &= \widetilde{\post}_Q
+        \end{aligned}$
+    \end{itemize}
+    Thus $(\post_R, \left<\wp(S), \subseteq\right>, \left<\wp(S), \subseteq\right>, \widetilde{\pre}_R) = (\pre_Q, \left<\wp(S), \subseteq\right>, \left<\wp(S), \subseteq\right>, \widetilde{\post}_Q)$ which we already proved to be a Galois connection.
 \end{exercise}
