@@ -11,11 +11,12 @@
             \node (gt) at (2, 1) {$\Z_{> k}$};
             \node (bot) at (1, 0) {$\varnothing$};
 
-            \draw (top) -- (leq) -- (eq) -- (bot);
-            \draw (top) -- (neq) -- (lt) -- (bot);
-            \draw (top) -- (geq) -- (gt) -- (bot);
-            \draw (leq) -- (lt) -- (neq) -- (gt);
-            \draw (geq) -- (eq);
+            \draw (top) -- (leq) -- (eq);
+            \draw (top) -- (neq) -- (lt);
+            \draw (top) -- (geq) -- (gt);
+            \draw (leq) -- (lt) -- (bot);
+            \draw (neq) -- (gt) -- (bot);
+            \draw (geq) -- (eq) -- (bot);
         \end{tikzpicture}
     \end{center}
     Hence, $Sign_k$ is a parametric abstract domain of signs, where the constant 0 is replaced by any integer parameter $k \in \Z$. Provide sound definitions for the following abstract transfer functions: $\Bsharp{x \leq k}$, $\Asharp{x * y}$, $\Asharp{x / k}$, $\Asharp{x - y}$, which are as precise as possible, ideally the best correct approximation.
