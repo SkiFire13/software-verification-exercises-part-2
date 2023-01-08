@@ -1,5 +1,49 @@
 \begin{exercise}{
     Let $C$ and $A$ be complete lattices, $(\alpha, C, A, \gamma)$ be a Galois insertion, $f: C \to C$ be an additive concrete operation (i.e. for all $S \subseteq C$, $f(\vee_C S) = \vee_C f(S)$). Prove that: there exists a monotone abstract operation $f^\sharp: A \to A$ such that $\alpha \circ f = f^\sharp \circ \alpha$ holds if and only if for all $a \in A$ there exists some $a' \in A$ such that $\vee_C \left\{ c \in C \mid f(c) \leq \gamma(a) \right\} = \gamma(a')$
 }
-    
+    We prove the two directions:
+    \begin{itemize}
+        \item $(\implies)$ \\
+        Let $S = \{c \in C \mid f(c) \leq \gamma(a)\}$, $c^* = \vee_C S$. Then:
+        \begin{gather*}
+            \begin{aligned}
+                (f \circ \gamma \circ \alpha) (c^*)
+                &\leq (\gamma \circ \alpha \circ f \circ \gamma \circ \alpha) (c^*) \\
+                &= (\gamma \circ f^\sharp \circ \alpha \circ \gamma \circ \alpha) (c^*) \\
+                &= (\gamma \circ f^\sharp \circ \alpha) (c^*) \\
+                &= (\gamma \circ \alpha \circ f) (c^*) \\
+                &= (\gamma \circ \alpha \circ \gamma) (a) \\
+                &= \gamma (a)
+            \end{aligned} \\
+            \implies (\gamma \circ \alpha) (c^*) \in S \\
+            \implies (\gamma \circ \alpha) (c^*) \leq c^* \qquad\qquad c^* \leq (\gamma \circ \alpha) (c^*) \\
+            \implies (\gamma \circ \alpha) (c^*) = c^* \\
+            \implies a' = \alpha(c^*)
+        \end{gather*}
+        \item $(\impliedby)$ \\
+        We want to show $f^\sharp = \alpha \circ f \circ \gamma$ is the wanted function. It is monotone because a composition of monotone function. Then we want to show $\alpha \circ f = f^\sharp \circ \alpha = \alpha \circ f \circ \gamma \circ \alpha$, that is $\forall c \in C.\ (\alpha \circ f)(c) = (\alpha \circ f \circ \gamma \circ \alpha)(c)$ \\
+        We distinguish the two directions:
+        \begin{itemize}
+            \item $(\leq)$
+            \begin{gather*}
+                c \leq \gamma(\alpha(c)) \\
+                \implies (\alpha \circ f)(c) \leq (\alpha \circ f \circ \gamma \circ \alpha)(c)
+            \end{gather*}
+            \item $(\geq)$ \\
+            Let $a = \alpha(f(c))$, $S = \left\{\dot{c} \in C \mid f(\dot{c}) \leq \gamma(a)\right\}$, $c^* = \vee_C S = \gamma(a')$.
+            \begin{gather*}
+                f(c) \leq \gamma(\alpha(f(c))) \implies c \in S \\
+                \implies c^* \geq c \\
+                \implies \gamma(\alpha(c^*)) \geq \gamma(\alpha(c)) \\
+                \implies \gamma(\alpha(c^*)) = \gamma(\alpha(\gamma(a'))) = \gamma(a') = c^* \geq \gamma(\alpha(c)) \\
+                \implies \alpha(f(c^*)) \geq \alpha(f(\gamma(\alpha(c)))) \\
+                \begin{aligned}
+                    \alpha(f(c^*)) &= \alpha(f(\vee_C S)) \\
+                    &= \alpha(\vee_C \left\{f(\dot{c}) \mid \dot{c} \in C, f(\dot{c}) \leq \gamma(\alpha(f(c)))\right\}) \\
+                    &= \alpha(\gamma(\alpha(f(c)))) = \alpha(f(c))
+                \end{aligned} \\
+                \implies \alpha(f(c)) = \alpha(f(c^*)) \geq \alpha(f(\gamma(\alpha(c))))
+            \end{gather*}
+        \end{itemize}
+    \end{itemize}
 \end{exercise}
