@@ -7,8 +7,7 @@
     Prove that $\gamma(\alpha(b)) = b$ and $\gamma(\alpha(\neg b)) = \neg b$ hold.
 }
     \begin{gather*}
-        \alpha(b \cap \neg b) = \alpha(\gamma(\alpha(b)) \cap \neg b) \\
-        \alpha(b \cap \neg b) = \alpha(\varnothing) \\
+        \alpha(b \cap \neg b) = \alpha(\gamma(\alpha(b)) \cap \neg b) = \alpha(\varnothing) \\
         \gamma(\bot_A) = \varnothing \implies \alpha(\varnothing) \leq \bot_A \implies \alpha(\varnothing) = \bot_A \\
         \alpha(\gamma(\alpha(b)) \cap \neg b) = \bot_A \\
         \implies \gamma(\alpha(b)) \cap \neg b \subseteq \gamma(\bot_A) = \varnothing \\

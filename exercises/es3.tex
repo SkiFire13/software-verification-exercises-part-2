@@ -52,17 +52,22 @@
                 \alpha(\gamma(y)) = \alpha(2) = y
             \end{aligned}
         \end{gather*}
-        Consider the following $f$ and the induced $f^\sharp = \alpha \circ f \circ \gamma$ so that $\gamma \circ f^\sharp = f \circ \gamma$ by construction:
+        Consider the following $f$ and the induced $f^\sharp = \alpha \circ f \circ \gamma$ by $\gamma \circ f^\sharp = f \circ \gamma$:
         \begin{gather*}
             \begin{aligned}
                 f(0) = 0 \\
                 f(1) = 2 \\
                 f(2) = 2
             \end{aligned}
-            \qquad\qquad
+            \qquad\quad
             \begin{aligned}
-                f^\sharp (x) = \alpha(f(\gamma(x))) = \alpha(f(1)) = \alpha(2) = y \\
-                f^\sharp (y) = \alpha(f(\gamma(y))) = \alpha(f(2)) = \alpha(2) = y
+                f^\sharp (x) = y \\
+                f^\sharp (y) = y
+            \end{aligned}
+            \qquad\quad
+            \begin{aligned}
+                \gamma(f^\sharp(x)) = \gamma(y) = 2 = f(1) = f(\gamma(x)) \\
+                \gamma(f^\sharp(y)) = \gamma(y) = 2 = f(2) = f(\gamma(y)) \\
             \end{aligned}
         \end{gather*}
         $0$ and $2$ are fixpoints of $f$, thus $\lfp(f) = 0$. $y$ is the only fixpoint of $f^\sharp$, so $\lfp(f^\sharp) = y$. However $\alpha(\lfp(f)) = \alpha(0) = x \neq y = \lfp(f^\sharp)$.

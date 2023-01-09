@@ -25,7 +25,7 @@
         \end{gather*}
         \item $\forall Y \in \wp(S).\ Y \subseteq \widetilde{\post}_R(\pre_R(Y))$
         \begin{gather*}
-            y \in Y \implies \forall x \in S.\ (x, y) \in R \implies \exists y' \in Y.\ (x, y') \in R \\
+            y \in Y \implies \forall x \in S.\ (x, y) \in R \implies \exists y' = y \in Y.\ (x, y') \in R \\
             \implies \forall x \in S.\ (x, y) \in R \implies x \in \pre_R(Y) \\
             \implies y \in \widetilde{\post}_R(\pre_R(Y))
         \end{gather*}
@@ -33,7 +33,7 @@
         \begin{gather*}
             x \in \pre_R(\widetilde{\post}_R(X)) \implies \exists y \in \widetilde{\post}_R(X).\ (x, y) \in R \\
             \implies \exists y \in S.\ (x, y) \in R, \forall x' \in S.\ (x', y) \in R \implies x' \in X \\
-            (x, y) \in R \implies x \in X
+            \implies x \in X
         \end{gather*}
     \end{enumerate}
     Now we prove that $(\post_R, \left<\wp(S), \subseteq\right>, \left<\wp(S), \subseteq\right>, \widetilde{\pre}_R)$ is a Galois connection. Consider the relation $Q = \left\{(y, x) \mid (x, y) \in R\right\}$. Then:

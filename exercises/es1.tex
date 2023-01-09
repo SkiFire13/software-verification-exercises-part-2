@@ -20,7 +20,7 @@
                 c_i \leq c_1 \vee_C c_2 \quad\quad \forall i \in \left\{ 1, 2 \right\} \\
                 \implies \gamma(\alpha(c_i)) \leq \gamma(\alpha(c_1 \vee_C c_2)) \quad\quad \forall i \in \left\{ 1, 2 \right\} \\
                 \implies \gamma(\alpha(c_1)) \vee_C \gamma(\alpha(c_2)) \leq \gamma(\alpha(c_1 \vee_C c_2)) \\
-                \iff \alpha(\gamma(\alpha(c_1)) \vee_C \gamma(\alpha(c_2))) \leq \alpha(c_1 \vee_C c_2) \\
+                \implies \alpha(\gamma(\alpha(c_1)) \vee_C \gamma(\alpha(c_2))) \leq \alpha(c_1 \vee_C c_2) \\
                 \implies \gamma(\alpha(\gamma(\alpha(c_1)) \vee_C \gamma(\alpha(c_2)))) \leq \gamma(\alpha(c_1 \vee_C c_2))
             \end{gather*}
         \end{itemize}
@@ -28,14 +28,14 @@
         \begin{itemize}
             \item $(\leq)$:
             \begin{gather*}
-                \wedge_A S \leq \gamma(a) \quad \forall a \in S \\
+                \wedge_A S \leq a \quad \forall a \in S \\
                 \implies \gamma(\wedge_A S) \leq \gamma(a) \quad \forall a \in S \\
                 \implies \gamma(\wedge_A S) \leq \wedge_C \left\{\gamma(a) \in C \mid a \in S\right\}
             \end{gather*}
             \item $(\geq)$:
             \begin{gather*}
                 \wedge_C \left\{\gamma(a) \in C \mid a \in S\right\} \leq \gamma(a) \quad \forall a \in S \\
-                \iff \alpha(\wedge_C \left\{\gamma(a) \in C \mid a \in S\right\}) \leq a \quad \forall a \in S \\
+                \implies \alpha(\wedge_C \left\{\gamma(a) \in C \mid a \in S\right\}) \leq a \quad \forall a \in S \\
                 \implies \alpha(\wedge_C \left\{\gamma(a) \in C \mid a \in S\right\}) \leq \wedge_A S \\
                 \implies \wedge_C \left\{\gamma(a) \in C \mid a \in S\right\} \leq \gamma(\wedge_A S)
             \end{gather*}
@@ -44,10 +44,9 @@
         \begin{itemize}
             \item $\gamma$ is injective $\implies \alpha \circ \gamma = \id$
             \begin{gather*}
-                \alpha(\gamma(a)) \leq \alpha(\gamma(a))
-                \implies \gamma(a) \leq \gamma(\alpha(\gamma(a))) \\
+                \gamma(a) \leq \gamma(\alpha(\gamma(a))) \\
                 \alpha(\gamma(a)) \leq a
-                \implies \gamma(\alpha(\gamma(a))) \leq a \\
+                \implies \gamma(\alpha(\gamma(a))) \leq \gamma(a) \\
                 \implies \gamma(a) = \gamma(\alpha(\gamma(a))) \\
                 \iff a = \alpha(\gamma(a))
             \end{gather*}
@@ -59,14 +58,13 @@
             \end{gather*}
             \item $\alpha$ surjective $\implies \gamma$ injective
             \begin{gather*}
-                \gamma(\alpha(c)) \leq \gamma(\alpha(c))
-                \implies \alpha(\gamma(\alpha(c))) \leq \alpha(c) \\
-                a \leq \gamma(\alpha(c))
+                \alpha(\gamma(\alpha(c))) \leq \alpha(c) \\
+                c \leq \gamma(\alpha(c))
                 \implies \alpha(c) \leq \alpha(\gamma(\alpha(c))) \\
                 \implies \alpha(c) = \alpha(\gamma(\alpha(c))) \\
                 \alpha \text{ surjective } \implies \forall a \in A.\ \exists c \in C.\ \alpha(c) = a \\
                 \forall a_1, a_2 \in A.\ \gamma(a_1) = \gamma(a_2) \implies \\
-                \quad\quad a_1 = \alpha(c) = \alpha(\gamma(\alpha(c))) = \alpha(\gamma(a_1)) = \alpha(\gamma(a_2)) = a_2
+                a_1 = \alpha(c_1) = \alpha(\gamma(\alpha(c_1))) = \alpha(\gamma(a_1)) = \alpha(\gamma(a_2)) = \alpha(\gamma(\alpha(c_2))) = \alpha(c_2) = a_2
             \end{gather*}
         \end{itemize}
     \end{enumerate}

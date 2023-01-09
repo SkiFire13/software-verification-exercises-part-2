@@ -6,18 +6,18 @@
         \item $\left<C_1 \to^m C_2, \sqsubseteq\right>$ and $\left<A_1 \to^m A_2, \sqsubseteq\right>$ are lattices by hypothesis.
         \item $\alpha$ monotone ($\forall f_1, f_2 \in C_1 \to^m C_2.\ f_1 \sqsubseteq f_2 \implies \alpha(f_1) \sqsubseteq \alpha(f_2)$):
         \begin{gather*}
-            f_1 \sqsubseteq f_2 \implies \forall d \in C_1.\ f_1 (d) \leq f_2 (d) \\
-            \implies f_1 (\gamma_1 (c)) \leq f_2 (\gamma_1 (c)) \qquad \forall c \in C_1 \\
-            \implies \alpha_2 (f_1 (\gamma_1 (c))) \leq \alpha_2 (f_2 (\gamma_1 (c))) \\
-            \implies \alpha(f_1)(c) \leq \alpha(f_2)(c) \\
+            f_1 \sqsubseteq f_2 \implies \forall c \in C_1.\ f_1 (c) \leq f_2 (c) \\
+            \implies f_1 (\gamma_1 (a)) \leq f_2 (\gamma_1 (a)) \qquad \forall a \in A_1 \\
+            \implies \alpha_2 (f_1 (\gamma_1 (a))) \leq \alpha_2 (f_2 (\gamma_1 (a))) \\
+            \implies \alpha(f_1)(a) \leq \alpha(f_2)(a) \\
             \implies \alpha(f_1) \subseteq \alpha(f_2)
         \end{gather*}
         \item $\gamma$ monotone ($\forall f^\sharp_1, f^\sharp_2 \in A_1 \to^m A_2.\ f^\sharp_1 \sqsubseteq f^\sharp_2 \implies \gamma(f^\sharp_1) \sqsubseteq \gamma(f^\sharp_2)$):
         \begin{gather*}
-            f\sharp_1 \sqsubseteq f\sharp_2 \implies \forall b \in A_1.\ f\sharp_1 (b) \leq f\sharp_2 (b) \\
-            \implies f\sharp_1 (\alpha_1 (a)) \leq f\sharp_2 (\alpha_1 (a)) \qquad \forall a \in A_1  \\
-            \implies \gamma_2 (f\sharp_1 (\alpha_1 (a))) \leq \gamma_2 (f\sharp_2 (\alpha_1 (a))) \\
-            \implies \gamma(f\sharp_1)(a) \leq \gamma(f\sharp_2)(a) \\
+            f^\sharp_1 \sqsubseteq f^\sharp_2 \implies \forall a \in A_1.\ f^\sharp_1 (a) \leq f^\sharp_2 (a) \\
+            \implies f^\sharp_1 (\alpha_1 (c)) \leq f^\sharp_2 (\alpha_1 (c)) \qquad \forall c \in C_1  \\
+            \implies \gamma_2 (f^\sharp_1 (\alpha_1 (c))) \leq \gamma_2 (f^\sharp_2 (\alpha_1 (c))) \\
+            \implies \gamma(f^\sharp_1)(c) \leq \gamma(f^\sharp_2)(c) \\
             \implies \gamma(f^\sharp_1) \subseteq \gamma(f^\sharp_2)
         \end{gather*}
         \item $\forall f \in C_1 \to^m C_2.\ f \sqsubseteq \gamma(\alpha(f))$:
@@ -31,7 +31,7 @@
         \begin{gather*}
             \alpha_1(\gamma_1(c)) \leq c \qquad \forall c \in C_1 \\
             \implies f^\sharp(\alpha_1(\gamma_1(c))) \leq f^\sharp(c) \\
-            \implies \alpha_2(\gamma_2(f^\sharp(\alpha_1(\gamma_1(c))))) \leq f^\sharp(\alpha_1(\gamma_1(c))) \leq f^\sharp(c) \\
+            \implies \alpha_2(\gamma_2(f^\sharp(\alpha_1(\gamma_1(c))))) \leq \alpha_2(\gamma_2(f^\sharp(c))) \leq f^\sharp(c) \\
             \implies \alpha(\gamma(f^\sharp)) \sqsubseteq f^\sharp
         \end{gather*}
     \end{enumerate}
