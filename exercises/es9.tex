@@ -21,5 +21,38 @@
     \end{center}
     Hence, $Sign_k$ is a parametric abstract domain of signs, where the constant 0 is replaced by any integer parameter $k \in \Z$. Provide sound definitions for the following abstract transfer functions: $\Bsharp{x \leq k}$, $\Asharp{x * y}$, $\Asharp{x / k}$, $\Asharp{x - y}$, which are as precise as possible, ideally the best correct approximation.
 }
-    
+    \begin{align*}
+        \Bsharp{x \leq k} s^\sharp &= \begin{cases}
+            \bot^\sharp & \text{if } \Asharp{x} s^\sharp \in \{ \varnothing, \Z_{>k} \} \\
+            s^\sharp [x \to \Z_{\leq k}] & \text{if } \Asharp{x} s^\sharp \in \{ \Z, \Z_{\leq k} \} \\
+            s^\sharp [x \to \Z_k] & \text{if } \Asharp{x} s^\sharp \in \{ \Z_k, \Z_{\geq k} \} \\
+            s^\sharp [x \to \Z_{< k}] & \text{if } \Asharp{x} s^\sharp \in \{ \Z_{< k}, \Z_{\neq k} \}
+        \end{cases} \\
+        \Asharp{x * y} s^\sharp &= \begin{cases}
+            \varnothing & \text{if } \Asharp{x} s^\sharp = \varnothing \text{ or } \Asharp{y} s^\sharp = \varnothing \\
+            \Z_k & \text{if } k = 0 \text{ and } (\Asharp{x} = \Z_k \text{ or } \Asharp{y} = \Z_k) \\
+            \Asharp{y} s^\sharp & \text{if } k = 1 \text{ and } \Asharp{x} s^\sharp = \Z_k \\
+            \Asharp{x} s^\sharp & \text{if } k = 1 \text{ and } \Asharp{y} s^\sharp = \Z_k \\
+            ... \\
+            \Z & \text{otherwise}
+        \end{cases} \\
+        \Asharp{x / k} s^\sharp &= \begin{cases}
+            \varnothing & \text{if } \Asharp{x} s^\sharp = \varnothing \text{ or } k = 0 \\
+            \Asharp{x} s^\sharp & \text{if } k = 1 \\
+            \Z_{< k} & \text{if } k > 1 \text{ and } \Asharp{x} s^\sharp \in \{ \Z_{< k}, \Z_{\leq k} \} \\
+            \Z_{> k} & \text{if } k < 0 \text{ and } \Asharp{x} s^\sharp \in \{ \Z_{< k}, \Z_{\leq k} \} \\
+            \Z_{\neq k} & \text{if } \Asharp{x} = \Z_k \\
+            ... \\
+            \Z & \text{otherwise}
+        \end{cases} \\
+        \Asharp{x - y} s^\sharp &= \begin{cases}
+            \varnothing & \text{if } \Asharp{x} s^\sharp = \varnothing \text{ or } \Asharp{y} s^\sharp = \varnothing \\
+            \Asharp{x} s^\sharp & \text{if } k = 0 \text{ and } \Asharp{y} s^\sharp = \Z_k \\
+            % TODO: case A[y] = Z_k (inverti A[x])
+            \Z_{< k} & \text{if } k > 0 \text{ and } \Asharp{x} \in \{ \Z_{< k}, \Z_{\leq k}, Z_k \} \text{ and } \Asharp{y} \in \{ \Z_{> k}, \Z_{\geq k}, Z_k \} \\
+            \Z_{> k} & \text{if } k < 0 \text{ and } \Asharp{x} \in \{ \Z_{> k}, \Z_{\geq k}, Z_k \} \text{ and } \Asharp{y} \in \{ \Z_{< k}, \Z_{\leq k}, Z_k \} \\
+            ... \\
+            \Z & \text{otherwise}
+        \end{cases} \\
+    \end{align*}
 \end{exercise}
