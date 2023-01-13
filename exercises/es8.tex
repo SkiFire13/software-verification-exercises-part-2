@@ -34,18 +34,17 @@
             \item $(\geq)$ \\
             Let $a = \alpha(f(c))$, $S = \left\{\dot{c} \in C \mid f(\dot{c}) \leq \gamma(a)\right\}$, $c^* = \vee_C S = \gamma(a')$.
             \begin{gather*}
-                f(c) \leq \gamma(\alpha(f(c))) \implies c \in S \\
-                \implies c^* \geq c \\
-                \implies \gamma(\alpha(c^*)) \geq \gamma(\alpha(c)) \\
-                \implies \gamma(\alpha(c^*)) = \gamma(\alpha(\gamma(a'))) = \gamma(a') = c^* \geq \gamma(\alpha(c)) \\
-                \implies \alpha(f(c^*)) \geq \alpha(f(\gamma(\alpha(c)))) \\
+                f(c) \leq \gamma(\alpha(f(c))) \implies c \in S \implies c \leq c^* \\
+                \implies \gamma(\alpha(c)) \leq \gamma(\alpha(c^*)) = \gamma(\alpha(\gamma(a'))) = \gamma(a') = c^* \\
                 \begin{aligned}
-                    \alpha(f(c^*)) &= \alpha(f(\vee_C S)) \\
+                    \implies \alpha(f(\gamma(\alpha(c))))
+                    &\leq \alpha(f(c^*)) \\
+                    &= \alpha(f(\vee_C S)) \\
                     &= \alpha(\vee_C \left\{f(\dot{c}) \mid \dot{c} \in C, f(\dot{c}) \leq \gamma(\alpha(f(c)))\right\}) \\
                     % \gamma(\alpha(f(c))) is an upper bound of f(S) (not necessarily the least)
-                    &\leq \alpha(\gamma(\alpha(f(c)))) = \alpha(f(c))
-                \end{aligned} \\
-                \implies \alpha(f(c)) \geq \alpha(f(c^*)) \geq \alpha(f(\gamma(\alpha(c))))
+                    &\leq \alpha(\gamma(\alpha(f(c)))) \\
+                    &= \alpha(f(c))
+                \end{aligned}
             \end{gather*}
         \end{itemize}
     \end{itemize}
