@@ -23,13 +23,13 @@
 }
     \begin{align*}
         \Bsharp{x \leq k} s^\sharp &= \begin{cases}
-            \bot^\sharp & \text{if } \Asharp{x} s^\sharp \in \{ \varnothing, \Z_{>k} \} \\
+            \bot^\sharp & \text{if } \Asharp{x} s^\sharp \in \{ \varnothing, \Z_{>k} \} \text{ or } s^\sharp = \bot^\sharp \\
             s^\sharp [x \to \Z_{\leq k}] & \text{if } \Asharp{x} s^\sharp \in \{ \Z, \Z_{\leq k} \} \\
             s^\sharp [x \to \Z_k] & \text{if } \Asharp{x} s^\sharp \in \{ \Z_k, \Z_{\geq k} \} \\
             s^\sharp [x \to \Z_{< k}] & \text{if } \Asharp{x} s^\sharp \in \{ \Z_{< k}, \Z_{\neq k} \}
         \end{cases} \\
         \Asharp{x * y} s^\sharp &= \begin{cases}
-            \varnothing & \text{if } \Asharp{x} s^\sharp = \varnothing \text{ or } \Asharp{y} s^\sharp = \varnothing \\
+            \varnothing & \text{if } \Asharp{x} s^\sharp = \varnothing \text{ or } \Asharp{y} s^\sharp = \varnothing \text{ or } s^\sharp = \bot^\sharp \\
             \Z_k & \text{if } k = 0 \text{ and } (\Asharp{x} = \Z_k \text{ or } \Asharp{y} = \Z_k) \\
             \Asharp{y} s^\sharp \hspace*{-0.3cm} & \text{if } k = 1 \text{ and } \Asharp{x} s^\sharp = \Z_k \\
             \Z_{>k} & \text{if } k > 0, \Asharp{x} s^\sharp \in \{ \Z_k, \Z_{>k}, \Z_{\geq k} \} \text{ and } \Asharp{y} s^\sharp \in \{ \Z_k, \Z_{>k}, \Z_{\geq k} \} \\
@@ -37,7 +37,7 @@
             \Z & \text{otherwise}
         \end{cases} \\
         \Asharp{x / k} s^\sharp &= \begin{cases}
-            \varnothing & \text{if } \Asharp{x} s^\sharp = \varnothing \text{ or } k = 0 \\
+            \varnothing & \text{if } \Asharp{x} s^\sharp = \varnothing, k = 0 \text{ or } s^\sharp = \bot^\sharp \\
             \Asharp{x} s^\sharp & \text{if } k = 1 \\
             \Z_{< k} & \text{if } k > 1 \text{ and } \Asharp{x} s^\sharp \in \{ \Z_{< k}, \Z_{\leq k} \} \\
             \Z_{> k} & \text{if } k < 0 \text{ and } \Asharp{x} s^\sharp \in \{ \Z_{< k}, \Z_{\leq k} \} \\
@@ -46,7 +46,7 @@
             \Z & \text{otherwise}
         \end{cases} \\
         \Asharp{x - y} s^\sharp &= \begin{cases}
-            \varnothing & \text{if } \Asharp{x} s^\sharp = \varnothing \text{ or } \Asharp{y} s^\sharp = \varnothing \\
+            \varnothing & \text{if } \Asharp{x} s^\sharp = \varnothing, \Asharp{y} s^\sharp = \varnothing \text{ or } s^\sharp = \bot^\sharp \\
             \Asharp{x} s^\sharp \hspace*{-0.3cm} & \text{if } k = 0 \text{ and } \Asharp{y} s^\sharp = \Z_k \\
             \Z_{< k} & \text{if } k > 0, \Asharp{x} s^\sharp \in \{ \Z_{< k}, \Z_{\leq k}, Z_k \} \text{ and } \Asharp{y} s^\sharp \in \{ \Z_{> k}, \Z_{\geq k}, Z_k \} \\
             ... & \text{(invert $x$ and $y$ and negate their values)} \\
