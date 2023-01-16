@@ -1,0 +1,12 @@
+var x: int, y: int;
+begin
+    x = 0;
+    y = 10;
+    while x <= 10 do
+        if x == 5 then
+            x = 100;
+        endif;
+        x = x + 2;
+        y = y - 1;
+    done;
+end
