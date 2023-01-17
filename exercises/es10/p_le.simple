@@ -1,17 +1,11 @@
 var x: int, y: int, z: int;
 begin
-    x = 10;
-    y = 10;
-    z = 10;
-    while brandom do
-        if brandom then
-            x = x + 1;
-            y = y + 1;
-            z = z - 2;
-        else
-            x = x - 1;
-            y = y - 2;
-            z = z + 3;
-        endif;
+    x = 0;
+    y = 0;
+    z = 0;
+    while x < 10 do
+        x = x + 1;
+        y = y + x;
+        z = z - x - 1;
     done;
 end
