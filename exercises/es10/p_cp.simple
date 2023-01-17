@@ -1,0 +1,16 @@
+var x: int, y: int, z: int;
+begin
+    x = 0;
+    while x < 10 do
+        y = 0;
+        z = x;
+        if brandom then
+            z = z - 1;
+        endif;
+        while y < 10 do
+            y = y + 1;
+            z = z - 1;
+        done;
+        x = x + 1;
+    done;
+end
