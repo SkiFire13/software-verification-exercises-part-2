@@ -6,24 +6,21 @@
     \end{itemize}
     The student should be able to explain why and how Interproc computes the results of these program analyses.
 }
+    \newcommand{\program}[3]{
+        \begin{minipage}[t]{.48\textwidth}
+            \centering
+            \lstinputlisting[title=$#2$]{exercises/es10/#1}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[t]{.48\textwidth}
+            \vspace*{1cm}
+            #3
+        \end{minipage}
+        \\
+    }
     \vspace*{-0.6cm}\\
-    \begin{minipage}[t]{.48\textwidth}
-        \centering
-        \lstinputlisting[title=$P_\text{Linear Equalities}$]{exercises/es10/p_le.simple}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{.48\textwidth}
-        \centering 
-        \lstinputlisting[title=$Q_\text{Linear Equalities}$]{exercises/es10/q_le.simple}
-    \end{minipage}
-    \\
-    \begin{minipage}[t]{.48\textwidth}
-        \centering 
-        \lstinputlisting[title=$P_\text{Convex Polyhedra}$]{exercises/es10/p_cp.simple}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{.48\textwidth}
-        \centering 
-        \lstinputlisting[title=$Q_\text{Convex Polyhedra}$]{exercises/es10/q_cp.simple}
-    \end{minipage}
+    \program{p_le.simple}{P_\text{Linear Equalities}}{}
+    \program{q_le.simple}{Q_\text{Linear Equalities}}{}
+    \program{p_cp.simple}{P_\text{Convex Polyhedra}}{}
+    \program{q_cp.simple}{Q_\text{Convex Polyhedra}}{}
 \end{exercise}
