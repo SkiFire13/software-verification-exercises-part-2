@@ -30,7 +30,17 @@
             \item Best invariant: $-x+y=0$
         \end{itemize}
     }
-    \program{p_cp.simple}{P_\text{Convex Polyhedra}}{}
+    \program{p_cp.simple}{P_\text{Convex Polyhedra}}{
+        \begin{itemize}
+            \item Invariant:
+            \begin{itemize}
+                \item[] $-x-y-z+10>=0$
+                \item[] $z>=0$
+                \item[] $y>=0$
+                \item[] $x>=0$
+            \end{itemize}
+        \end{itemize}
+    }
     \program{q_cp.simple}{Q_\text{Convex Polyhedra}}{
         \begin{itemize}
             \item Inferred invariant: $-x + 2 \geq 0$
@@ -39,6 +49,16 @@
                     \item[] $-2x+y+1>=0$
                     \item[] $-x+y>=0$
                     \item[] $3x-2y>=0$
+                \end{itemize}
+        \end{itemize}
+    }
+    \program{q_cp-interesting.simple}{Q_\text{Convex Polyhedra} alternative}{
+        \begin{itemize}
+            \item Inferred invariant: $x>=0$
+            \item Best invariant:
+                \begin{itemize}
+                    \item[] $-x+10>=0$
+                    \item[] $x>=0$
                 \end{itemize}
         \end{itemize}
     }
