@@ -50,21 +50,25 @@
                 \implies \gamma(a) = \gamma(\alpha(\gamma(a))) \\
                 \iff a = \alpha(\gamma(a))
             \end{gather*}
+            \item $\gamma$ is injective $\impliedby \alpha \circ \gamma = \id$
+            \begin{gather*}
+                \forall a_1, a_2 \in A.\ \gamma(a_1) = \gamma(a_2) \implies \\
+                a_1 = \alpha(\gamma(a_1)) = \alpha(\gamma(a_2)) = a_2
+            \end{gather*} 
             \item $\alpha \circ \gamma = \id \implies \alpha$ is surjective
             \begin{gather*}
                 \forall a \in A.\ \alpha(\gamma(a)) = a \\
                 \implies \forall a \in A.\ \exists c = \gamma(a) \in C.\ \alpha(c) = a \\
                 \implies \alpha \text{ is surjective}
             \end{gather*}
-            \item $\alpha$ surjective $\implies \gamma$ injective
+            \item $\alpha \circ \gamma = \id \impliedby \alpha$ is surjective
             \begin{gather*}
                 \alpha(\gamma(\alpha(c))) \leq \alpha(c) \\
                 c \leq \gamma(\alpha(c))
                 \implies \alpha(c) \leq \alpha(\gamma(\alpha(c))) \\
                 \implies \alpha(c) = \alpha(\gamma(\alpha(c))) \\
                 \alpha \text{ surjective } \implies \forall a \in A.\ \exists c \in C.\ \alpha(c) = a \\
-                \forall a_1, a_2 \in A.\ \gamma(a_1) = \gamma(a_2) \implies \\
-                a_1 = \alpha(c_1) = \alpha(\gamma(\alpha(c_1))) = \alpha(\gamma(a_1)) = \alpha(\gamma(a_2)) = \alpha(\gamma(\alpha(c_2))) = \alpha(c_2) = a_2
+                \implies a = \alpha(c) = \alpha(\gamma(\alpha(c))) = \alpha(\gamma(a))
             \end{gather*}
         \end{itemize}
     \end{enumerate}
